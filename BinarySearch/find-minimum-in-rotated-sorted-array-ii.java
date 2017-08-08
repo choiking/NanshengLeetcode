@@ -13,7 +13,7 @@ public class Solution {
             else if (num[hi] < num[mid]) {
                 lo = mid;
             }
-            else { // when num[mid] and num[hi] are same
+            else { // when num[mid] and num[hi] are same, move hi and mid.
                 hi--;
             }
         }
