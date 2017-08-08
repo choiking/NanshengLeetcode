@@ -3,7 +3,7 @@ public class Solution {
         int lo = 0;
         int hi = num.length - 1;
         int mid = 0;
-        //只考虑hi和mid的情况，就不需要考虑中间的反转，比较省事。
+        //只考虑hi和mid的情况，就不像lo和mid需要考虑中间的反转，比较省事。
         while(lo + 1 < hi) {
             mid = lo + (hi - lo) / 2;
             
