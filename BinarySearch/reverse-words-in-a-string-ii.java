@@ -1,6 +1,6 @@
 public class Solution {
     public void reverseWords(char[] s) {
-        //3 step
+        //3 steps
         //reverse the whole string
         reverse(s, 0, s.length - 1);
         //reverse each word
