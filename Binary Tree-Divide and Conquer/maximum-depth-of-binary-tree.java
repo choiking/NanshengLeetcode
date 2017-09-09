@@ -7,7 +7,7 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-//version 1: Divide and Conquer
+//version 1: Divide and Conquer (recursively)
 class Solution {
     public int maxDepth(TreeNode root) {
         if (root == null) {// null or left
