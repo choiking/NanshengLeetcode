@@ -1,4 +1,4 @@
-class Solution {
+class Solution {//time: 2的n次方
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         //Arrays.sort(nums);
