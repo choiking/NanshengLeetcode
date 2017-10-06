@@ -41,3 +41,34 @@ class Solution {// version 2: Divide and Conquer
         return res;
 }
 }
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution { //version 3: using stack, no recursion
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        
+        if (root == null) return res;
+        stack.push(root);
+        
+        while (!stack.empty()) {
+            TreeNode temp = stack.pop();
+            res.add(temp.val);
+            if (temp.right != null) {
+                stack.push(temp.right);
+            }
+            if (temp.left != null) {
+                stack.push(temp.left);
+            }
+        }
+        return res;
+    }
+}
