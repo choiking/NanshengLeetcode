@@ -12,11 +12,13 @@ use hashMap to store reference in A, if A containsKey of B, return the node;
 
 
 
-
 version 2:
 use two pointer do two iteration
 we let a be headA, b be headB, when a reachs end, redirect it be headB, the same as B,
-because the run the same length
+because they will run the same length
+
+1 3 5 7 8 9 2 4 8 9
+2 4 8 9 1 3 5 7 8 9 
 
 */
 
