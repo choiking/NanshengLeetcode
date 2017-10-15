@@ -2,6 +2,17 @@
 verison 1:
 use hashMap to store reference in A, if A containsKey of B, return the node;
 
+
+
+
+
+
+
+
+
+
+
+
 version 2:
 use two pointer do two iteration
 we let a be headA, b be headB, when a reachs end, redirect it be headB, the same as B,
