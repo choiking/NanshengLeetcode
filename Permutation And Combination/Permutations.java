@@ -12,8 +12,8 @@ class Solution {
         }
         for (int i = 0; i < nums.length; i++) {
             if(list.contains(nums[i])) {
-            continue;
-        }
+                continue;
+            }
             list.add(nums[i]);
             dfs(result, list, nums);
             list.remove(list.size() - 1);
