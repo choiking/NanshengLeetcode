@@ -5,12 +5,12 @@ class Solution {//time: 2的n次方
         dfs(result, new ArrayList<>(), nums, 0);
         return result;
     }
-    void dfs(List<List<Integer>> result, List<Integer> list, int[] nums, int pos) {
-        result.add(new ArrayList<>(list));
+    void dfs(List<List<Integer>> result, List<Integer> templist, int[] nums, int pos) {
+        result.add(new ArrayList<> (templist));
         for (int i = pos; i < nums.length; i++) {
-            list.add(nums[i]);
-            dfs(result, list, nums, i + 1);
-            list.remove(list.size() - 1);
+            tempList.add(nums[i]);
+            dfs(result, tempList, nums, i + 1);
+            tempList.remove(tempList.size() - 1);
         }
     }
 }

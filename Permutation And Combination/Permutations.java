@@ -6,14 +6,14 @@ class Solution {
         return result;
     }
     void dfs(List<List<Integer>> result, List<Integer> list, int[] nums) {
-        if(list.size() == nums.length) {
+        if(list.size() == nums.length) {           //(去掉pos是因为在排列组合中[1,2,3]和[3,2,1]都是答案）
             result.add(new ArrayList<>(list));
             return;
         }
         for (int i = 0; i < nums.length; i++) {
             if(list.contains(nums[i])) {
-            continue;
-        }
+                continue;
+            }
             list.add(nums[i]);
             dfs(result, list, nums);
             list.remove(list.size() - 1);
