@@ -9,8 +9,8 @@ class Solution {//time: 2的n次方
         result.add(new ArrayList<> (templist));
         for (int i = pos; i < nums.length; i++) {
             tempList.add(nums[i]);
-            dfs(result, list, nums, i + 1);
-            tempList.remove(list.size() - 1);
+            dfs(result, tempList, nums, i + 1);
+            tempList.remove(tempList.size() - 1);
         }
     }
 }
