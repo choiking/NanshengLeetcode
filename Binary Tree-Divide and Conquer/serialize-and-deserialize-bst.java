@@ -1,6 +1,6 @@
 
 /*
-如果使用preorder 来转换bst到 string， 转回去时也需要用preorder来build tree。
+如果使用preorder 来转换binary tree 到 string， 转回去时也需要用preorder来build tree。
 
 
 
