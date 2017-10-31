@@ -1,14 +1,14 @@
 /*
 Searching in Set is O(1), while searching in List is O(n);
-        h i t
-         /\
-        h o t
-       /\
-  d o t  l o t
-     /\     /\
-    d o g  l o g
-   /\ 
-  c o g
+        h i t                     hit
+         /\                        |
+        h o t                     hot
+       /\                         / \ 
+  d o t  l o t                  dot  lot
+     /\     /\                   |    |
+    d o g  l o g                dog  log
+   /\                             \  /
+  c o g                           cog
 one end BFS. 100ms running time.
 this solution uses Queue to store temporary words.
 */
