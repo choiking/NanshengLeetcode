@@ -10,6 +10,7 @@ Searching in Set is O(1), while searching in List is O(n);
    /\ 
   c o g
 one end BFS. 100ms running time.
+this solution uses Queue to store temporary words.
 */
 
 
