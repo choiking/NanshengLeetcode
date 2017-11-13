@@ -28,7 +28,7 @@ class Solution {
             if(queue.peek().left != null) queue.offer(queue.peek().left);
             if(queue.peek().right != null) queue.offer(queue.peek().right);
             //dequeue 
-            level.add(queue.poll().val); 
+            level.add(queue.poll().val); //it will add the size times
             }
             
             //add the level
