@@ -51,7 +51,8 @@ class Solution {// version 2: Divide and Conquer
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution { //version 3: using stack, no recursion
+class Solution { //version 3: using stack, no recursion BFS
+    //stack is different from queue in order because stack is FILO, queue is FIFO
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList();
         Stack<TreeNode> stack = new Stack<TreeNode>();
