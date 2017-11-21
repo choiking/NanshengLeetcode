@@ -3,6 +3,11 @@ class Solution {
     using MaxHeap(priority queue implementation, ..refer to priority queue doc)
     "public PriorityQueue(int initialCapacity,
              Comparator<? super E> comparator)"
+    “An unbounded priority queue based on a priority heap. The elements of the priority queue 
+    are ordered according to their natural ordering, or by a Comparator provided at queue construction 
+    time, depending on which constructor is used.”         
+    Priority Queue 在 java里面默认是heap 的implementation
+             
     String.compareTo(another string)  "Compares two strings lexicographically. " 
     
     The size of the priority queue is k. Each insertion takes logk time and we are iterating 
