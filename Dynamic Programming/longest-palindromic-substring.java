@@ -65,36 +65,4 @@ class Solution {
 }
 
 
-class Solution {
-    public String longestPalindrome(String s) {
-        int size = s.length();
-        if (size == 0) return "";
-        int palinBeginAt = 0, maxLen = 1;
-        boolean[][] palin = new boolean[size][size];
-        //single letter always true
-        for (int i = 0; i < size; i++) {
-            palin[i][i] = true;
-        }
-        //two letters
-        for (int i = 0; i < size - 1; i++) {
-            if (s.charAt(i) == s.charAt(i + 1)) {
-                palin[i][i + 1] = true;
-                palinBeginAt = i;
-                maxLen = 2;
-            }
-        }
-        //finding palin from 3 to n (currLen)
-        for (int currLen = 3; currLen <= size; currLen++) {
-            for (int i = 0; i <= size - currLen; i++) {
-                int j = i + currLen - 1;
-                if (s.charAt(i) == s.charAt(j) && palin[i + 1][j - 1]) {
-                    palin[i][j] = true;
-                    palinBeginAt = i;
-                    maxLen = currLen;
-                }
-            }
-        }
-        return s.substring(palinBeginAt, maxLen + palinBeginAt);
-    }
-}
 

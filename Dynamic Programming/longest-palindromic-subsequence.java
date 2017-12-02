@@ -1,5 +1,7 @@
 class Solution {
     /*
+    REMEMBER: Subsequence is different from Substring, Substring has to be contigous, but 
+    Subsequence doesn't necessarily to.
     suppose s.length() = 7;
     if (s.charAt(0) == s.charAt(6)) {
         lps = 2 + lps(0, 5);
@@ -15,6 +17,7 @@ class Solution {
     b         1
     
     */
+
     public int longestPalindromeSubseq(String s) {
         int len = s.length(), j = 0;
         int[][] dp = new int[len][len];

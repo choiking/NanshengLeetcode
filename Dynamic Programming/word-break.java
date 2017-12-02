@@ -35,6 +35,7 @@ public class Solution {
             }
         }*/
         
+
         //Second DP
         for(int i=1; i <= s.length(); i++){
             for(int j=0; j < i; j++){
@@ -48,3 +49,24 @@ public class Solution {
         return f[s.length()];
     }
 }
+
+public boolean wordBreak(String s, List<String> wordDict) {   
+        boolean[] f = new boolean[s.length()];
+        for (int i = 0; i < s.length(); i++) {
+            for (String str : wordDict) {
+                if (i - str.length() == -1 || (i >= str.length() && f[i - str.length()])) {
+                    if (s.substring(i - str.length() + 1, i + 1).equals(str)) {
+                        f[i] = true;
+                        break;
+                    }
+                }
+            }
+        }
+        return f[s.length() - 1];
+    }
+
+
+
+
+
+
