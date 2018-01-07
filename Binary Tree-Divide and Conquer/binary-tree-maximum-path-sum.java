@@ -21,9 +21,12 @@ public class Solution {
     
     private int maxPathDown(TreeNode node) {
         if (node == null) return 0;
-        int left = Math.max(0, maxPathDown(node.left));
-        int right = Math.max(0, maxPathDown(node.right));
-        maxValue = Math.max(maxValue, left + right + node.val);
-        return Math.max(left, right) + node.val;
+        //if left or right is negative, just delete it (by declaring it 0)
+        maxValue = Math.max(maxValue, Math.max(0, maxPathDown(node.left)) + 
+            Math.max(0, maxPathDown(node.right)) + node.val);
+        return Math.max(Math.max(0, maxPathDown(node.left)), Math.max(0, maxPathDown(node.right))) + root.val;
     }
 }
+
+
+p

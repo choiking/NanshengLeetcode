@@ -3,7 +3,6 @@
     */
 
 
-
       //Brute Force Solution, calculate every sum!
      public boolean hasPathSum(TreeNode root, int sum) {
         if (root == null) {
@@ -29,6 +28,9 @@
         boolean right = helper(node.right, sum);
         return left || right;
     }
+
+
+
 /*
    better sum - node.val = node.val
 */
