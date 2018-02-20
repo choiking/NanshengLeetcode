@@ -1,6 +1,7 @@
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<> ();
+        //use pos means on the first level, we will only use one of candidate.
         dfs(res, new ArrayList(), candidates, target, 0);
         return res;
     }
