@@ -2,13 +2,13 @@ class Solution {
     //using set and visited, you can remove duplicate permutation
     public List<List<Integer>> permuteUnique(int[] nums) {
         Set<List<Integer>> res = new HashSet<> ();
-        boolean[] visited = new boolean[nums.length]; 
+        boolean[] visited = new boolean[nums.length];
         dfs(res, new ArrayList<> (), visited, nums);
         List<List<Integer>> result = new ArrayList<> ();
         result.addAll(res);
         return result;
     }
-    
+
     void dfs(Set<List<Integer>> res, List<Integer> tempList, boolean[] visited, int[] nums) {
         if (tempList.size() == nums.length) {
             res.add(new ArrayList<> (tempList));// if it duplicate, it will not be added since it is a set
@@ -33,7 +33,7 @@ class Solution {
         dfs(res, new ArrayList<> (), visited, nums, 0);
         return res;
     }
-    
+
     void dfs(List<List<Integer>> res, List<Integer> tempList, boolean[] visited, int[] nums) {
         if (tempList.size() == nums.length) {
             res.add(new ArrayList<> (tempList));
@@ -50,4 +50,3 @@ class Solution {
     }
 
 }
-
