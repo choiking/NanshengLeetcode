@@ -11,19 +11,20 @@ class Solution {
         Arrays.fill(dp, -1);
     only happens when in the previous call, target = nums[i]
         dp[0] = 1;//return 1;
-        return helper(nums, target);  
+        return helper(nums, target);
     }
-    int helper(int[] nums, int target) { 
+    int helper(int[] nums, int target) {
     //We can fill the array with -1 to indicate that the result hasn’t been calculated yet.
-        if (dp[target] != -1) 
+        if (dp[target] != -1)
             return dp[target];
         int res = 0;
-        for (int i = 0; i < nums.length; i++) { 
+        for (int i = 0; i < nums.length; i++) {
             if (target >= nums[i])
                 res += helper(nums, target - nums[i]);
         }
         dp[target] = res;
         return dp[target];
+        //Hi, is is a Test
     }
     /*
     dp[4] = dp[3] + dp[2] + dp[1];
@@ -38,7 +39,7 @@ class Solution {
         for (int i = 1; i < com.length; i++) {
             for (int j = 0; j < nums.length; j++) {
                 if (i >= nums[j])
-                    com[i] += com[i - nums[j]]; 
+                    com[i] += com[i - nums[j]];
             }
         }
         return com[target];
