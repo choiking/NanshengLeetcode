@@ -9,9 +9,6 @@ left - right - root ----->   root  - right - left
 */
 
 
-
-
-
 class Solution {
     LinkedList<Integer> res = new LinkedList<> ();
     public List<Integer> postorderTraversal(TreeNode root) {
@@ -29,4 +26,3 @@ class Solution {
         }
         return res;
     }
-    
