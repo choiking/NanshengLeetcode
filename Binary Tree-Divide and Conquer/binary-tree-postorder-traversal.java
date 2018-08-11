@@ -4,14 +4,14 @@ using stack.
 using linkedList data structure particularly for post order
 
 left - right - root ----->   root  - right - left
-
+addFirst();
 
 */
 
 
 class Solution {
-    LinkedList<Integer> res = new LinkedList<> ();
     public List<Integer> postorderTraversal(TreeNode root) {
+        LinkedList<Integer> res = new LinkedList<> ();
         if (root == null) return res;
         TreeNode curr = root;
         Stack<TreeNode> stack = new Stack<> ();
@@ -23,6 +23,12 @@ class Solution {
             }
             curr = stack.pop();
             curr = curr.left;
+            /*
+            if (curr !=null)
+            else {
+
+            }
+            */
         }
         return res;
     }

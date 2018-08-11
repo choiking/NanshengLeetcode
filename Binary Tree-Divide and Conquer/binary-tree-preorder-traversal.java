@@ -33,7 +33,7 @@ class Solution {// version 2: Divide and Conquer
         //Divide
         List<Integer> left = preorderTraversal(root.left);
         List<Integer> right = preorderTraversal(root.right);
-        
+
         //Conquer
         res.add(root.val);
         res.addAll(left);
@@ -58,10 +58,10 @@ class Solution {// version 2: Divide and Conquer
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList();
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        
+
         if (root == null) return res;
         stack.push(root);
-        
+
         while (!stack.empty()) {
             TreeNode temp = stack.pop();
             res.add(temp.val);
@@ -79,10 +79,10 @@ class Solution {// version 2: Divide and Conquer
 //Another DFS using stack(more complicatied);
 
     //instance of Stack is thread safe (lock/synchronize inside), so Dequeue should be faster.
-//Queue: offer, poll, peek   stack: push, pop, peek 
+//Queue: offer, poll, peek   stack: push, pop, peek
 public List<Integer> preorderTraversal(TreeNode root) {
     List<Integer> result = new LinkedList<>();
-    Deque<TreeNode> stack = new LinkedList<>();
+    Deque<TreeNode> stack = new LinkedList<>();//or Stack<TreeNode> stack = new Stack<>();
     TreeNode node = root;
     while (node != null || !stack.isEmpty()) {
         if (node != null) {

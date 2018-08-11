@@ -14,16 +14,11 @@
 2.Recursive solution --- O(n) time and O(n) space (considering the spaces of function call stack);
 3.Morris traversal --- O(n) time and O(1) space!!!
 
-
-
 */
 
 
-
-class Solution {
-    
     /*
-  DFS + stack  = iterative  
+  DFS + stack  = iterative
 
   dfs可以用stack模拟递归
    iterative
@@ -70,12 +65,12 @@ class Solution {
 
     void MorrisTraversal(TreeNode root) {
         TreeNode curr, pre;
-          
+
         if (root == null)
             return;
-          
+
         curr = root;
-        while (curr != null) 
+        while (curr != null)
         {
             if (curr.left == null) //if left is null, add itself, and assign it to its right
             {
@@ -90,23 +85,19 @@ class Solution {
                     pre = pre.right;
                 }
 
-                if (pre.right == null) 
+                if (pre.right == null)
                 {
                     pre.right = curr;
                     current = curr.left;
-                } 
+                }
 
                 else
                  {
                     pre.right = null;
                     list.add(curr.val);
                     curr = curr.right;
-                }  
-                  
-            } 
-        } 
+                }
+
+            }
+        }
 }
-
-
-
-
