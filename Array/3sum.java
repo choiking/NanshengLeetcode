@@ -18,7 +18,7 @@ class Solution {
                 }
             }
         }
-        return res;  
+        return res;
     }
     /*
      two pointer
@@ -34,7 +34,7 @@ class Solution {
         for (int start = 0; start < size - 2; start++) {
             if (start == 0 || nums[start] != nums[start - 1]) {//skip the same
                 int lo = start + 1, hi = size - 1;
-                while (lo < hi) { 
+                while (lo < hi) {
                     int sum = nums[start] + nums[lo] + nums[hi];
                     if (sum < 0) {
                         lo++;
@@ -50,6 +50,33 @@ class Solution {
                         lo++;
                         hi--;
                     }
+                }
+            }
+        }
+        return res;
+    }
+
+    //用Set排除duplicate，前提是先排序好
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> res = new ArrayList<> ();
+        Set<List<Integer>> set = new HashSet<> ();
+        if (nums == null || nums.length == 0) return res;
+
+        Arrays.sort(nums);
+
+        Map<Integer, Integer> map = new HashMap<> ();
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], i);
+        }
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                List<Integer> list = new ArrayList<> ();
+                if (map.containsKey(-nums[i]-nums[j]) && map.get(-nums[i]-nums[j]) > j) {
+                    list.add(nums[i]);
+                    list.add(nums[j]);
+                    list.add(nums[map.get(-nums[i]-nums[j])]);
+                    if (set.add(list))  res.add(list);
                 }
             }
         }

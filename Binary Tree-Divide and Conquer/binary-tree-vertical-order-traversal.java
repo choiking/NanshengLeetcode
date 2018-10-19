@@ -7,7 +7,61 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+
+//two treemap solution
+public List<List<Integer>> verticalOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<> ();
+        if (root == null) return res;
+        //use treeMap so keys(col) and values(row) can be sorted automatically (<col, <row, list>>)
+        Map<Integer, TreeMap<Integer, List<Integer>>> map = new TreeMap<>();
+        helper(root, map, 0, 0);//treat root node as position (0, 0)
+
+
+        for (int i : map.keySet()) {
+            List<Integer> list = new ArrayList<>();
+            TreeMap<Integer, List<Integer>> colMap = map.get(i);
+            for (List<Integer> j : colMap.values()) {
+                list.addAll(j);
+            }
+            res.add(list);
+        }
+
+        return res;
+    }
+
+
+    //whatever Traversal is OK as long as left goes before right
+
+    public void helper(TreeNode root, Map<Integer, TreeMap<Integer, List<Integer>>> map, int row, int col) {
+        if (root == null) return;
+        //store value
+        TreeMap<Integer, List<Integer>> colMap = map.getOrDefault(col, new TreeMap<> ());
+        List<Integer> list = colMap.getOrDefault(row, new ArrayList<> ());
+        list.add(root.val);
+        colMap.put(row, list);
+        map.put(col, colMap);
+
+        helper(root.right, map, row + 1, col + 1);
+        helper(root.left, map, row + 1, col - 1);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public List<List<Integer>> verticalOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) return res;
@@ -40,7 +94,11 @@ class Solution {
             res.add(map.get(i));
         }
         return res;
-    }
+
+
+
+
+
     //There is no difference when using HashMap. Since by using HashMap it need keep track of min and max as well, I’d rather directly insert into list by computing min and max in advance.
     private int min = 0, max = 0;
     public List<List<Integer>> verticalOrder(TreeNode root) {

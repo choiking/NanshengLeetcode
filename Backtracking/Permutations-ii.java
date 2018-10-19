@@ -4,8 +4,7 @@ class Solution {
         Set<List<Integer>> res = new HashSet<> ();
         boolean[] visited = new boolean[nums.length];
         dfs(res, new ArrayList<> (), visited, nums);
-        List<List<Integer>> result = new ArrayList<> ();
-        result.addAll(res);
+        List<List<Integer>> result = new ArrayList<> (res);
         return result;
     }
 
@@ -23,6 +22,9 @@ class Solution {
             visited[i] = false;
         }
     }
+
+
+
 
     //just using visited
     //deal with duplicates;in the same position, only put one distinct number once.

@@ -8,16 +8,17 @@
  * }
  */
 class Solution {
+  //BFS traversal
     public List<List<Integer>> levelOrder(TreeNode root) {
         ArrayList res = new ArrayList();
-        
-        if(root == null) {
+
+        if (root == null) {
             return res;
         }
-        
+
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
-        
+
         while (!queue.isEmpty()) {
             ArrayList<Integer> level = new ArrayList<Integer>();
             int size = queue.size();
@@ -25,7 +26,7 @@ class Solution {
             for (int i = 0; i < size; i++) {//每层有几个node，就做几次延展。
                 if(node.left != null) queue.add(node.left);
                 if(node.right != null) queue.add(node.right);
-                level.add(queue.remove()); 
+                level.add(queue.remove());
             }//when this ends, q will store all the level value;
             //add the level
             res.add(level);
@@ -44,7 +45,7 @@ class Solution {
         helper(0, res, root);
         return res;
     }
-    
+
     void helper(int height, List<List<Integer>> res, TreeNode root) {
         if (root == null) {
             return;
@@ -60,7 +61,7 @@ class Solution {
 
 
 
-   //below is standard format of traversal (not so level by level, but in a level order)(NOT the solution)
+   //below is standard format of BFS traversal
     public void levelOrderQueue(Node root) {
         Queue<Node> q = new LinkedList<Node>();
         if (root == null)  return;

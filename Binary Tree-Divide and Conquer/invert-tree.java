@@ -1,4 +1,4 @@
-class Solution {//BFS  standard BFS format
+  //BFS  standard BFS format
     public TreeNode invertTree(TreeNode root) {
         if (root == null) {
             return null;
@@ -19,6 +19,9 @@ class Solution {//BFS  standard BFS format
         }
         return root;
     }
+
+
+
     //DFS
     public TreeNode invertTree(TreeNode root) {
         if (root == null) {
@@ -30,4 +33,13 @@ class Solution {//BFS  standard BFS format
         return root;
     }
 
+    //DFS 
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) return null;
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        invertTree(root.left);
+        invertTree(root.right);
+        return root;
     }
