@@ -10,7 +10,7 @@ class Solution {
      2.modify index by adding previous one
      3.put it into res index
      */
-    public void sortColors(int[] arr) {
+    public void sortColors1(int[] arr) {
         int[] index = new int[3];
         //1.put it into index
         for (int i = 0; i < arr.length; i++) {
@@ -34,8 +34,8 @@ class Solution {
     First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's
     two pass
     */
-    public void sortColors(int[] arr) {
-        int red = 0, white = 0, blue = 0;
+    public void sortColors2(int[] arr) {
+        int red = 0, white = 0;
         for (int i = 0; i < arr.length; i++) {//first count each color
             if (arr[i] == 0) {
                 red++;
@@ -70,7 +70,7 @@ class Solution {
      left boundary|         |right boundary
             00000 | 1111111 | 22222222
     */
-    public void sortColors(int[] arr) {
+    public void sortColors3(int[] arr) {
         int l = 0, r = arr.length - 1;
         for (int i = 0; i <= r; i++) {
             if (arr[i] == 0) {
@@ -86,5 +86,10 @@ class Solution {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        System.out.print("bdsf");
+        System.out.println("dsfsfg");
     }
 }
